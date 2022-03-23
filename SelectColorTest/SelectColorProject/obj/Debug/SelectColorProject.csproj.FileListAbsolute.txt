@@ -1,0 +1,10 @@
+C:\Users\eliwa\Desktop\SelectColorTest\SelectColorProject\bin\Debug\SelectColorProject.exe.config
+C:\Users\eliwa\Desktop\SelectColorTest\SelectColorProject\bin\Debug\SelectColorProject.exe
+C:\Users\eliwa\Desktop\SelectColorTest\SelectColorProject\bin\Debug\SelectColorProject.pdb
+C:\Users\eliwa\Desktop\SelectColorTest\SelectColorProject\obj\Debug\SelectColorProject.csproj.AssemblyReference.cache
+C:\Users\eliwa\Desktop\SelectColorTest\SelectColorProject\obj\Debug\SelectColorProject.Properties.Resources.resources
+C:\Users\eliwa\Desktop\SelectColorTest\SelectColorProject\obj\Debug\SelectColorProject.csproj.GenerateResource.cache
+C:\Users\eliwa\Desktop\SelectColorTest\SelectColorProject\obj\Debug\SelectColorProject.csproj.CoreCompileInputs.cache
+C:\Users\eliwa\Desktop\SelectColorTest\SelectColorProject\obj\Debug\SelectColorProject.exe
+C:\Users\eliwa\Desktop\SelectColorTest\SelectColorProject\obj\Debug\SelectColorProject.pdb
+C:\Users\eliwa\Desktop\SelectColorTest\SelectColorProject\obj\Debug\SelectColorProject.MainForm.resources
