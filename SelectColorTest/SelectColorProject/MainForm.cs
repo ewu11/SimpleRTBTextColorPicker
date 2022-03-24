@@ -207,32 +207,39 @@ namespace SelectColorProject
             }
             else
             {
-                if (colorChanged == false) //set lastColor to colorSquare bitmap
+                if(lastColor.IsEmpty || tempLastColor.IsEmpty)
                 {
-                    currentLastColor = lastColor;
-                    lastColorBtn.Image = colorSquare;
+                    MessageBox.Show(this, "Please select a different color from the first color!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                else if (tempLastColor != Color.Empty) //if secondary color not yet chosen
+                else
                 {
-                    //MessageBox.Show(this, "Second last color not yet added, choose different color from the first one!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    currentLastColor = tempLastColor;
-                    lastColorBtn.Image = colorSquare;
+                    if (colorChanged == false) //set lastColor to colorSquare bitmap
+                    {
+                        currentLastColor = lastColor;
+                        lastColorBtn.Image = colorSquare;
+                    }
+                    else if (tempLastColor != Color.Empty) //if secondary color not yet chosen
+                    {
+                        //MessageBox.Show(this, "Second last color not yet added, choose different color from the first one!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        currentLastColor = tempLastColor;
+                        lastColorBtn.Image = colorSquare;
+                    }
+
+                    //--manage selected text in the RTB--
+                    theRTB.SelectionStart = startIndex;
+                    theRTB.SelectionLength = endIndex;
+
+                    theRTB.Select(theRTB.SelectionStart, theRTB.SelectionLength);
+                    //--manage selected text in the RTB--
+
+                    //set background color
+                    theRTB.SelectionBackColor = currentLastColor;
+
+                    //remove selection highlight
+                    theRTB.DeselectAll();
+
+                    statusStrip.Text = "Last color changed successfully!";
                 }
-
-                //--manage selected text in the RTB--
-                theRTB.SelectionStart = startIndex;
-                theRTB.SelectionLength = endIndex;
-
-                theRTB.Select(theRTB.SelectionStart, theRTB.SelectionLength);
-                //--manage selected text in the RTB--
-
-                //set background color
-                theRTB.SelectionBackColor = currentLastColor;
-
-                //remove selection highlight
-                theRTB.DeselectAll();
-
-                statusStrip.Text = "Last color changed successfully!";
             }
 
             //lastly, set focus to RTB
