@@ -1,15 +1,18 @@
 # SimpleRTBTextColorPicker
 A simple Rich Text Box(RTB) program which allows users to change the text background colors.
 
-![programPreview](https://user-images.githubusercontent.com/70519090/159726514-7681d8ff-a2d5-4b75-853c-62ec6eff6dd2.png)<br>
+![programPreview](https://user-images.githubusercontent.com/70519090/159917608-a26688de-8c33-4b07-b685-75086b42745c.png)<br>
 Above shows how the program looks like.
 
 ## Functions
-![colorPicker](https://user-images.githubusercontent.com/70519090/159727025-b7a17266-f421-4ac5-bfd5-a760abd66e2a.png)<br>
+![colorPicker](https://user-images.githubusercontent.com/70519090/159917707-8b1cf124-7da7-4a2f-a64d-93f512e1cd85.png)<br>
 A simple color picker is available, allowing users to change different colors up to their needs.
 
-![functionPreview](https://user-images.githubusercontent.com/70519090/159727269-d2cb8771-5358-43fe-874c-ea97ea377246.png)<br>
+![functionPreview1](https://user-images.githubusercontent.com/70519090/159917795-2f3955f8-bed2-4cc5-b940-a2dfb695afe2.png)<br>
 A button that is able to store the last chosen color. Then, users can set the text background color based on the last chosen color.
+
+![functionPreview2](https://user-images.githubusercontent.com/70519090/159917349-948d5d7a-0c98-4d62-892f-46f2fe243aad.png)<br>
+A button that allows users to detect colors that was set into the RTB.
 
 # Setup
 1. Clone or download the zip folder of this project into your local system.
