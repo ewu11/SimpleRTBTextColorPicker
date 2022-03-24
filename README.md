@@ -10,3 +10,8 @@ A simple color picker is available, allowing users to change different colors up
 
 ![functionPreview](https://user-images.githubusercontent.com/70519090/159727269-d2cb8771-5358-43fe-874c-ea97ea377246.png)<br>
 A button that is able to store the last chosen color. Then, users can set the text background color based on the last chosen color.
+
+# Setup
+1. Clone or download the zip folder of this project into your local system.
+2. In the project folder, head to **SelectColorTest** -> **SelectColorProject** -> **SelectColorProject.slm**.
+3. Run the program.
