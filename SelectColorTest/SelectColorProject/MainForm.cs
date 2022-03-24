@@ -66,14 +66,6 @@ namespace SelectColorProject
 
         private void addColBtn_Click_1(object sender, EventArgs e)
         {
-            /*var startIndex = 0; //from beginning of RTB
-            var endIndex = theRTB.TextLength; //'til the end*/
-
-            //int startIndex;
-            //int endIndex; //'til the end
-
-            //statusStrip.Text = "Add a color...";
-
             if (theRTB.TextLength == 0)
             {
                 statusStrip.Text = emptyRTBStatus;
@@ -179,8 +171,6 @@ namespace SelectColorProject
 
         private void lastColorBtn_Click(object sender, EventArgs e)
         {
-            //var startIndex = 0; //from beginning of RTB
-            //var endIndex = theRTB.TextLength; //'til the end
             var currentLastColor = Color.Empty;
             
             if(theRTB.TextLength == 0)
@@ -202,7 +192,6 @@ namespace SelectColorProject
                     }
                     else if (tempLastColor != Color.Empty) //if secondary color not yet chosen
                     {
-                        //MessageBox.Show(this, "Second last color not yet added, choose different color from the first one!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         currentLastColor = tempLastColor;
                         lastColorBtn.Image = colorSquare;
                     }
@@ -233,8 +222,6 @@ namespace SelectColorProject
 
             if (localRTB.SelectionLength.Equals(0)) //if user don't select any text
             {
-                //MessageBox.Show(this, "Enters A!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
                 startIndex = 0; //from beginning of RTB
                 endIndex = localRTB.TextLength; //'til the end of RTB
 
@@ -249,8 +236,6 @@ namespace SelectColorProject
             }
             else if (!(localRTB.SelectionLength.Equals(0))) //if user has text selected
             {
-                //MessageBox.Show(this, "Enters B!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
                 startIndex = localRTB.SelectionStart; //from beginning of RTB
                 endIndex = localRTB.SelectionLength; //'til the end of RTB
 
@@ -269,94 +254,10 @@ namespace SelectColorProject
             return false;
         }
 
-        //flagger; check if background color was changed/ not default value
-        /*private void isBgColorChanged(RichTextBox localRTB)
-        {
-            *//*int endOfDocIndex = localRTB.TextLength; //end of document
-            List<Color> colorList = new List<Color>();
-            bool defTxtColChanged = false; //by default
-            int startIndex = 0;
-
-            //---if all the text are in default bg color---
-            int endIndex = theRTB.TextLength;
-            theRTB.Select(startIndex, endIndex);
-            if (theRTB.SelectionBackColor != defaultBackgroundColor)
-            {
-                defTxtColChanged = true;
-            }
-            //---if all the text are in default bg color---
-
-            //---if the text contains some other colors than the default-- -
-            //--manage text selection--
-            localRTB.SelectionStart = startIndex;
-            int startingSelection = localRTB.SelectionStart;
-            int endingSelection = startingSelection + 1;
-            //--manage text selection--
-
-            if (defTxtColChanged == true)
-            {
-                while (startingSelection < endOfDocIndex) //keep going through all the text until end of document
-                {
-                    localRTB.Select(startingSelection, endingSelection);
-
-                    if (!(colorList.Contains(localRTB.SelectionBackColor))) //if the list doesnt have the color yet, then append it into the list
-                    {
-                        colorList.Add(localRTB.SelectionBackColor); //get the selectionbackcolor
-                    }
-
-                    startingSelection++;
-                    endingSelection++;
-                }
-            }
-            //---if the text contains some other colors than the default---
-
-            //after the whole document is analyzed, show color result
-            if (defTxtColChanged == false)
-            {
-                if (localRTB.BackColor == defaultBackgroundColor || localRTB.BackColor == SystemColors.Window)
-                {
-                    MessageBox.Show(this, "Text background color is in default.\n" + "Color name: " + defaultBackgroundColor, "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-            }
-            else //if the txt bg color was changed, and other colors present
-            {
-                //MessageBox.Show(this, "Text background color(s) was changed.\n" + "Color name(s): " + theColors[i].ToString() + "\n", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                //MessageBox.Show(this, "Text background color(s) was changed.\n" + "Color name(s): " + colorList + "\n", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                foreach (var theColors in colorList)
-                {
-                    Console.WriteLine(theColors);
-                }
-                Console.WriteLine("\n");
-                for (int i = 0; i < colorList.Count; i++)
-                {
-                    Console.WriteLine(colorList[i]);
-                }
-                Console.WriteLine("\n");
-            }
-
-            //clear all the colors in the list for next use
-    
-                colorList.Clear();
-
-                //by default
-                //return false;*//*
-        }*/
-
         private void detectColorChanges(RichTextBox localRTB)
         {
             List<Color> colorList = new List<Color>();
 
-            /*//----case detecting default color----
-            //case is special for checking default text color
-            //instead of going one by one, just go through all instead, to detect multiple color at once
-            localRTB.SelectionStart = 0; //from beginning
-            localRTB.SelectionLength = localRTB.TextLength; //'til the end
-            localRTB.Select(localRTB.SelectionStart, localRTB.SelectionLength);
-
-            bool localBgColIsDefault = textBgColIsDefault(localRTB);
-            //----case detecting default color----*/
-
-            //----case detecting mltiple color----
             //go through text one by one, skipping white lines
             int startIndex = 0;
             int endIndex = localRTB.TextLength;
@@ -383,8 +284,6 @@ namespace SelectColorProject
                     //MessageBox.Show(this, "currentSelection: " + localRTB.SelectedText, "Information", MessageBoxButtons.OK);
                     //--testing purposes--
 
-                    //textBgColIsDefault(theRTB);
-
                     //if the color is not in list, add it
                     if ((!colorList.Contains(localRTB.SelectionBackColor)))
                     {
@@ -395,7 +294,6 @@ namespace SelectColorProject
                     localRTB.SelectionStart += 1;
                 }
             }
-            //----case detecting mltiple color----
 
             //show the contents
             /*for (int i = 0; i < colorList.Count; i++)
@@ -420,26 +318,6 @@ namespace SelectColorProject
             while (localRTB.SelectionStart < endIndex)
             {
                 localRTB.Select(localRTB.SelectionStart, localRTB.SelectionLength); //select the text first before processing
-
-                /*if (localRTB.SelectedText.Contains(" ")) //skip white spaces
-                {
-                    //so that able to go to next text
-                    localRTB.SelectionStart += 1;
-                }
-                else if (localRTB.SelectedText.Contains("\n")) //skip new line
-                {
-                    //so that able to go to next text
-                    localRTB.SelectionStart += 1;
-                }
-                else
-                {
-                    //--manage bg color of selected text in RTB--
-                    theRTB.SelectionBackColor = defaultBackgroundColor;
-                    //--manage bg color of selected text in RTB--
-
-                    //so that able to go to next text
-                    localRTB.SelectionStart += 1;
-                }*/
 
                 //--manage bg color of selected text in RTB--
                 theRTB.SelectionBackColor = defaultBackgroundColor;
@@ -475,23 +353,6 @@ namespace SelectColorProject
             if(msgStr == "empty")
             {
                 MessageBox.Show(this, "Rich Text Box is empty!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        //check if if all text color are still default
-        private bool textBgColIsDefault22(RichTextBox localRTB)
-        {
-            if(localRTB.SelectionBackColor == defaultBackgroundColor)
-            {
-                return true;
-            }
-            else if(localRTB.SelectionBackColor == Color.White)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
             }
         }
 
