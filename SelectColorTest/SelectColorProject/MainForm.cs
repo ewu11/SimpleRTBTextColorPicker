@@ -63,7 +63,7 @@ namespace SelectColorProject
             }
             else
             {
-                statusStrip.Text = "Remove a color...";
+                //statusStrip.Text = "Remove a color...";
 
                 //--manage selected text in the RTB--
                 theRTB.SelectionStart = startIndex;
@@ -86,10 +86,13 @@ namespace SelectColorProject
 
         private void addColBtn_Click_1(object sender, EventArgs e)
         {
-            var startIndex = 0; //from beginning of RTB
-            var endIndex = theRTB.TextLength; //'til the end
+            /*var startIndex = 0; //from beginning of RTB
+            var endIndex = theRTB.TextLength; //'til the end*/
 
-            statusStrip.Text = "Add a color...";
+            //int startIndex;
+            //int endIndex; //'til the end
+
+            //statusStrip.Text = "Add a color...";
 
             if (theRTB.TextLength == 0)
             {
@@ -101,20 +104,16 @@ namespace SelectColorProject
                 //show the color picker dialog
                 DialogResult colorDialogResult = colorDialog1.ShowDialog(this);
 
+                isTextSelected(theRTB);
+
+                //finally, manage the backselectioncolor, based on the selectedtext
                 //--manage the color picker dialog--
                 if (colorDialogResult == DialogResult.OK)
                 {
-                    //--manage selected text in the RTB--
-                    theRTB.SelectionStart = startIndex;
-                    theRTB.SelectionLength = endIndex;
-
-                    theRTB.Select(theRTB.SelectionStart, theRTB.SelectionLength);
-                    //--manage selected text in the RTB--
-
                     //set background color
                     theRTB.SelectionBackColor = colorDialog1.Color;
-                    
-                    if(lastColor == Color.Empty) //only for the first time color is changed, next and successive changes dont apply for this if clause
+
+                    if (lastColor == Color.Empty) //only for the first time color is changed, next and successive changes dont apply for this if clause
                     {
                         lastColor = theRTB.SelectionBackColor;
 
@@ -126,7 +125,7 @@ namespace SelectColorProject
                     }
                     else //next and succesive color changes
                     {
-                        if(lastColor != theRTB.SelectionBackColor) //if the color has changed, dont directly change "lastColor"
+                        if (lastColor != theRTB.SelectionBackColor) //if the color has changed, dont directly change "lastColor"
                         {
                             colorChanged = true;
 
@@ -152,6 +151,9 @@ namespace SelectColorProject
                 }
                 else if (colorDialogResult == DialogResult.Cancel)
                 {
+                    //remove selection highlight
+                    theRTB.DeselectAll();
+
                     statusStrip.Text = "Color change aborted!";
                 }
                 else
@@ -197,8 +199,8 @@ namespace SelectColorProject
 
         private void lastColorBtn_Click(object sender, EventArgs e)
         {
-            var startIndex = 0; //from beginning of RTB
-            var endIndex = theRTB.TextLength; //'til the end
+            //var startIndex = 0; //from beginning of RTB
+            //var endIndex = theRTB.TextLength; //'til the end
             var currentLastColor = Color.Empty;
             
             if(theRTB.TextLength == 0)
@@ -226,10 +228,7 @@ namespace SelectColorProject
                     }
 
                     //--manage selected text in the RTB--
-                    theRTB.SelectionStart = startIndex;
-                    theRTB.SelectionLength = endIndex;
-
-                    theRTB.Select(theRTB.SelectionStart, theRTB.SelectionLength);
+                    isTextSelected(theRTB);
                     //--manage selected text in the RTB--
 
                     //set background color
@@ -244,6 +243,50 @@ namespace SelectColorProject
 
             //lastly, set focus to RTB
             theRTB.Select();
+        }
+
+        //flagger; checks whether user has text selected or not
+        private bool isTextSelected(RichTextBox localRTB)
+        {
+            int startIndex;
+            int endIndex;
+
+            if (localRTB.SelectionLength.Equals(0)) //if user don't select any text
+            {
+                //MessageBox.Show(this, "Enters A!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                startIndex = 0; //from beginning of RTB
+                endIndex = localRTB.TextLength; //'til the end of RTB
+
+                //--manage selected text in the RTB--
+                localRTB.SelectionStart = startIndex;
+                localRTB.SelectionLength = endIndex;
+
+                localRTB.Select(localRTB.SelectionStart, localRTB.SelectionLength);
+                //--manage selected text in the RTB--
+
+                return false;
+            }
+            else if (!(localRTB.SelectionLength.Equals(0))) //if user has text selected
+            {
+                //MessageBox.Show(this, "Enters B!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                startIndex = localRTB.SelectionStart; //from beginning of RTB
+                endIndex = localRTB.SelectionLength; //'til the end of RTB
+
+                if (localRTB.SelectedText.Contains(" ")) //skips whitespaces if selected together with text
+                {
+                    endIndex -= 1;
+                }
+
+                localRTB.Select(startIndex, endIndex);
+                //--manage selected text in the RTB--
+
+                return true;
+            }
+
+            //by default
+            return false;
         }
     }
 }
