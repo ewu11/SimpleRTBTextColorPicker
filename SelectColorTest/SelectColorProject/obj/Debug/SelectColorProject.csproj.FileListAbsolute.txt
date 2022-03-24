@@ -8,3 +8,13 @@ C:\Users\eliwa\Desktop\SelectColorTest\SelectColorProject\obj\Debug\SelectColorP
 C:\Users\eliwa\Desktop\SelectColorTest\SelectColorProject\obj\Debug\SelectColorProject.exe
 C:\Users\eliwa\Desktop\SelectColorTest\SelectColorProject\obj\Debug\SelectColorProject.pdb
 C:\Users\eliwa\Desktop\SelectColorTest\SelectColorProject\obj\Debug\SelectColorProject.MainForm.resources
+C:\Users\eliwa\SimpleRichTextBoxTextColorPicker\SelectColorTest\SelectColorProject\bin\Debug\SelectColorProject.exe.config
+C:\Users\eliwa\SimpleRichTextBoxTextColorPicker\SelectColorTest\SelectColorProject\bin\Debug\SelectColorProject.exe
+C:\Users\eliwa\SimpleRichTextBoxTextColorPicker\SelectColorTest\SelectColorProject\bin\Debug\SelectColorProject.pdb
+C:\Users\eliwa\SimpleRichTextBoxTextColorPicker\SelectColorTest\SelectColorProject\obj\Debug\SelectColorProject.csproj.AssemblyReference.cache
+C:\Users\eliwa\SimpleRichTextBoxTextColorPicker\SelectColorTest\SelectColorProject\obj\Debug\SelectColorProject.MainForm.resources
+C:\Users\eliwa\SimpleRichTextBoxTextColorPicker\SelectColorTest\SelectColorProject\obj\Debug\SelectColorProject.Properties.Resources.resources
+C:\Users\eliwa\SimpleRichTextBoxTextColorPicker\SelectColorTest\SelectColorProject\obj\Debug\SelectColorProject.csproj.GenerateResource.cache
+C:\Users\eliwa\SimpleRichTextBoxTextColorPicker\SelectColorTest\SelectColorProject\obj\Debug\SelectColorProject.csproj.CoreCompileInputs.cache
+C:\Users\eliwa\SimpleRichTextBoxTextColorPicker\SelectColorTest\SelectColorProject\obj\Debug\SelectColorProject.exe
+C:\Users\eliwa\SimpleRichTextBoxTextColorPicker\SelectColorTest\SelectColorProject\obj\Debug\SelectColorProject.pdb
