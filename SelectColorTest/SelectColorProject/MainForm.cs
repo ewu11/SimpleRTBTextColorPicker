@@ -241,7 +241,10 @@ namespace SelectColorProject
 
                 if (localRTB.SelectedText.Contains(" ")) //skips whitespaces if selected together with text
                 {
-                    endIndex -= 1;
+                    if (localRTB.SelectedText.EndsWith(" "))
+                    {
+                        endIndex -= 1;
+                    }
                 }
 
                 localRTB.Select(startIndex, endIndex);
