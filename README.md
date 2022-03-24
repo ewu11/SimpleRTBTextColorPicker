@@ -1,4 +1,4 @@
-# SimpleRichTextBoxTextColorPicker
+# SimpleRTBTextColorPicker
 A simple Rich Text Box(RTB) program which allows users to change the text background colors.
 
 ![programPreview](https://user-images.githubusercontent.com/70519090/159726514-7681d8ff-a2d5-4b75-853c-62ec6eff6dd2.png)<br>
