@@ -38,8 +38,9 @@ namespace SelectColorProject
             this.clearTxtBtn = new System.Windows.Forms.Button();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.addColBtn = new System.Windows.Forms.Button();
-            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.lastColorBtn = new System.Windows.Forms.Button();
+            this.colorDetectBtn = new System.Windows.Forms.Button();
+            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.statusStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -54,6 +55,7 @@ namespace SelectColorProject
             this.statusStrip1.Location = new System.Drawing.Point(6, 422);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(788, 22);
+            this.statusStrip1.SizingGrip = false;
             this.statusStrip1.TabIndex = 1;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -83,7 +85,7 @@ namespace SelectColorProject
             this.tableLayoutPanel1.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 400F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 402F));
             this.tableLayoutPanel1.Controls.Add(this.theRTB, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.statusStrip1, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel1, 0, 1);
@@ -107,12 +109,12 @@ namespace SelectColorProject
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(9, 372);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(381, 41);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(379, 41);
             this.flowLayoutPanel1.TabIndex = 2;
             // 
             // clearColBtn
             // 
-            this.clearColBtn.Location = new System.Drawing.Point(284, 3);
+            this.clearColBtn.Location = new System.Drawing.Point(282, 3);
             this.clearColBtn.Name = "clearColBtn";
             this.clearColBtn.Size = new System.Drawing.Size(94, 38);
             this.clearColBtn.TabIndex = 0;
@@ -122,7 +124,7 @@ namespace SelectColorProject
             // 
             // clearTxtBtn
             // 
-            this.clearTxtBtn.Location = new System.Drawing.Point(184, 3);
+            this.clearTxtBtn.Location = new System.Drawing.Point(182, 3);
             this.clearTxtBtn.Name = "clearTxtBtn";
             this.clearTxtBtn.Size = new System.Drawing.Size(94, 38);
             this.clearTxtBtn.TabIndex = 1;
@@ -134,10 +136,11 @@ namespace SelectColorProject
             // 
             this.flowLayoutPanel2.Controls.Add(this.addColBtn);
             this.flowLayoutPanel2.Controls.Add(this.lastColorBtn);
+            this.flowLayoutPanel2.Controls.Add(this.colorDetectBtn);
             this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(397, 372);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(395, 372);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(394, 41);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(396, 41);
             this.flowLayoutPanel2.TabIndex = 3;
             // 
             // addColBtn
@@ -150,11 +153,6 @@ namespace SelectColorProject
             this.addColBtn.UseVisualStyleBackColor = true;
             this.addColBtn.Click += new System.EventHandler(this.addColBtn_Click_1);
             // 
-            // colorDialog1
-            // 
-            this.colorDialog1.ShowHelp = true;
-            this.colorDialog1.HelpRequest += new System.EventHandler(this.colorDialog1_HelpRequest);
-            // 
             // lastColorBtn
             // 
             this.lastColorBtn.Location = new System.Drawing.Point(103, 3);
@@ -165,6 +163,21 @@ namespace SelectColorProject
             this.lastColorBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lastColorBtn.UseVisualStyleBackColor = true;
             this.lastColorBtn.Click += new System.EventHandler(this.lastColorBtn_Click);
+            // 
+            // colorDetectBtn
+            // 
+            this.colorDetectBtn.Location = new System.Drawing.Point(217, 3);
+            this.colorDetectBtn.Name = "colorDetectBtn";
+            this.colorDetectBtn.Size = new System.Drawing.Size(94, 38);
+            this.colorDetectBtn.TabIndex = 2;
+            this.colorDetectBtn.Text = "Detect color(s)";
+            this.colorDetectBtn.UseVisualStyleBackColor = true;
+            this.colorDetectBtn.Click += new System.EventHandler(this.colorDetectBtn_Click);
+            // 
+            // colorDialog1
+            // 
+            this.colorDialog1.ShowHelp = true;
+            this.colorDialog1.HelpRequest += new System.EventHandler(this.colorDialog1_HelpRequest);
             // 
             // MainForm
             // 
@@ -178,6 +191,7 @@ namespace SelectColorProject
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Background Color Test";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
@@ -202,6 +216,7 @@ namespace SelectColorProject
         private System.Windows.Forms.ColorDialog colorDialog1;
         private System.Windows.Forms.Button clearTxtBtn;
         private System.Windows.Forms.Button lastColorBtn;
+        private System.Windows.Forms.Button colorDetectBtn;
     }
 }
 
